@@ -40,15 +40,12 @@
   </div>
 
   <!-- a-frame scene -->
-  <a-scene
+  <!-- <a-scene
     vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true;"
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
-    <!-- a-nft是定义图像跟踪实体的钩子-->
-    <!-- 在'url'属性中填写之前创建的“图像描述符”的路径 -->
-    <!-- 路径不带文件扩展名！【注意】以网站的域名为相对路径。 -->
     <a-nft
       type="nft"
       url="demo1/descriptors/lion/lion"
@@ -57,7 +54,6 @@
       smoothTolerance=".01"
       smoothThreshold="5"
     >
-        <!-- 这里设置用于显示在图片上的 GLTF 模型 -->
         <a-entity
             gltf-model="models/cute_home_robot/scene.gltf"
             scale="50 50 50"
@@ -66,7 +62,6 @@
         >
         </a-entity>
     </a-nft>
-    <!-- 根据设备移动而移动的静态摄像机 -->
     <a-entity camera></a-entity>
-  </a-scene>
+  </a-scene> -->
 </body>
