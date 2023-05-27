@@ -1,0 +1,17 @@
+bot-shark
+https://sketchfab.com/3d-models/robot-shark-2ec4e968688446878b23383769eca79f
+
+bot-security
+https://sketchfab.com/3d-models/puc-security-bot-7-ee0a6da142b94d2bbf1d65526bec3d3e
+
+bot-TV
+https://sketchfab.com/3d-models/cute-home-robot-7b75f204eb3e42b6babd883773e0789d
+
+bot-human
+https://sketchfab.com/3d-models/robot-playground-59fc99d8dcb146f3a6c16dbbcc4680da
+
+bot-uglyhuman
+https://sketchfab.com/3d-models/robot-80a736ddac1044299b134cfcca87c7f9
+
+bot-fly
+https://sketchfab.com/3d-models/rodot-5000-flying-robot-7a1e77ed31c04e6eb54889b3e1ab0d6c

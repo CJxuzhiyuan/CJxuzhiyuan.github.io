@@ -28,7 +28,6 @@
   <title>Welcome to PKU-iAI 2047</title>
   <script>
     window.onload = function() {
-      alert("version 23:10!");
     };
   </script>
 </head>
@@ -37,11 +36,12 @@
 
 <script>
   var githubio = 1;
-  var classid = Math.floor(Math.random()*4);
+  var classid = Math.floor(Math.random()*6);
   var url = "";
   var model = "";
   var scale = "";
   var position = "";
+  var rotation = "";
 
   //Set Platform
   if(githubio == 0){
@@ -53,24 +53,40 @@
 
   //Set Model
   if(classid == 0){
-    model = "models/cute_home_robot/scene.gltf";
-    scale = "50 50 50";
-    position = "50 50 0";
+    model = "models/bot-fly/scene.gltf";
+    scale = "200 200 200";
+    position = "130 50 -280";
+    rotation = "0 -90 65";
   }  
   else if(classid == 1){
-    model = "models/360_sphere_robot/scene.gltf";
-    scale = "50 50 50";
-    position = "50 50 0";
+    model = "models/bot-human/scene.gltf";
+    scale = "120 120 120";
+    position = "130 50 -200";
+    rotation = "-80 0 0";
   }
   else if(classid == 2){
-    model = "models/robot_shark/scene.gltf";
-    scale = "50 50 50";
-    position = "50 50 0";
+    model = "models/bot-security/scene.gltf";
+    scale = "80 80 80";
+    position = "130 50 -160";
+    rotation = "-90 0 0";
   }
   else if(classid == 3){
-    model = "models/security_bot/scene.gltf";
+    model = "models/bot-shark/scene.gltf";
+    scale = "30 30 30";
+    position = "130 50 -230";
+    rotation = "-30 -120 120";
+  }
+  else if(classid == 4){
+    model = "models/bot-tv/scene.gltf";
     scale = "50 50 50";
-    position = "50 50 0";
+    position = "130 50 -180";
+    rotation = "-90 0 0";
+  }
+  else if(classid == 5){
+    model = "models/bot-uglyhuman/scene.gltf";
+    scale = "210 210 210";
+    position = "130 50 -190";
+    rotation = "-90 0 0";
   }
   alert(model);
 
@@ -95,7 +111,8 @@
     aEntity.setAttribute("gltf-model", model);
     aEntity.setAttribute("scale", scale);
     aEntity.setAttribute("position", position);
-    aEntity.setAttribute("rotation", "-90 0 0");
+    aEntity.setAttribute("rotation", rotation);
+    aEntity.setAttribute("animation-mixer", "clip: Take 001;");
 
     var cameraEnity = document.createElement("a-entity");
     cameraEnity.setAttribute("camera","");
