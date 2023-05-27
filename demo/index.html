@@ -25,13 +25,91 @@
 </style>
 
 <head>
-  <title>加载完成后输出</title>
+  <title>Welcome to PKU-iAI 2047</title>
   <script>
     window.onload = function() {
-      alert("version 20:50!");
+      alert("version 22:20!");
     };
   </script>
 </head>
+
+
+
+<script>
+  var githubio = 1;
+  var classid = Math.floor(Math.random()*4);
+  var url = "";
+  var model = "";
+  var scale = "";
+  var position = "";
+
+  //Set Platform
+  if(githubio == 0){
+    url = "cjxuzhiyuan.github.io/demo/NFT-Marker-Creator/output/complex-box";
+  }
+  else{
+    url = "demo/NFT-Marker-Creator/output/complex-box";
+  }
+
+  //Set Model
+  if(classid == 0){
+    model = "models/cute_home_robot/scene.gltf";
+    scale = "50 50 50";
+    position = "50 50 0";
+  }  
+  else if(classid == 1){
+    model = "models/360_sphere_robot/scene.gltf";
+    scale = "50 50 50";
+    position = "50 50 0";
+  }
+  else if(classid == 2){
+    model = "models/robot_shark/scene.gltf";
+    scale = "50 50 50";
+    position = "50 50 0";
+  }
+  else if(classid == 3){
+    model = "models/security_bot/scene.gltf";
+    scale = "50 50 50";
+    position = "50 50 0";
+  }
+  alert(model);
+
+  // 在页面加载完成后，创建<a-nft>元素并设置属性值
+  window.addEventListener("load", function () {
+    var sceneElement = document.createElement("a-scene");
+    sceneElement.setAttribute("vr-mode-ui", "enabled: false;");
+    sceneElement.setAttribute("renderer", "logarithmicDepthBuffer: true;");
+    sceneElement.setAttribute("embedded", "");
+    sceneElement.setAttribute("arjs", "trackingMethod: best; sourceType: webcam; debugUIEnabled: false;");
+
+
+    var nftElement = document.createElement("a-nft");
+    nftElement.setAttribute("type", "nft");
+    nftElement.setAttribute("smooth", "true");
+    nftElement.setAttribute("url", url);
+    nftElement.setAttribute("smoothCount", "10");
+    nftElement.setAttribute("smoothTolerance", ".01");
+    nftElement.setAttribute("smoothThreshold", "5");
+
+    var aEntity = document.createElement("a-entity");
+    aEntity.setAttribute("gltf-model", model);
+    aEntity.setAttribute("scale", scale);
+    aEntity.setAttribute("position", position);
+    aEntity.setAttribute("rotation", "-90 0 0");
+
+    var cameraEnity = document.createElement("a-entity");
+    cameraEnity.setAttribute("camera","");
+
+    nftElement.appendChild(aEntity);
+    sceneElement.appendChild(nftElement);
+    sceneElement.appendChild(cameraEnity);
+
+
+    // 将<a-nft>元素添加到文档中
+    document.body.appendChild(sceneElement);
+  });
+</script>
+
 
 <body style="margin : 0px; overflow: hidden;">
   <!-- 在加载图像描述符之前，将显示“正在加载”的页面。 根据设备的计算能力，加载可能需要一段时间 -->
@@ -39,30 +117,4 @@
     <div>Loading, please wait...</div>
   </div>
 
-  <!-- a-frame scene -->
-  <a-scene
-    vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true;"
-    embedded
-    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-  >
-    <!-- in url add 'cjxuzhiyuan.github.io/' for local, no add for github-->
-    <a-nft
-      type="nft"
-      url="demo/NFT-Marker-Creator/output/lion"
-      smooth="true"
-      smoothCount="10"
-      smoothTolerance=".01"
-      smoothThreshold="5"
-    >
-        <a-entity
-            gltf-model="models/cute_home_robot/scene.gltf"
-            scale="500 500 500"
-            position="50 50 0"
-            rotation="-90 0 0"
-        >
-        </a-entity>
-    </a-nft> 
-    <a-entity camera></a-entity>
-  </a-scene>
 </body>
